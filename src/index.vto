@@ -1,0 +1,264 @@
+---
+layout: layouts/main.vto
+---
+
+<h1 class="text-center">
+  Retrospring is no longer available as of September 1st, 2025
+</h1>
+
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <p>
+    Retrospring has been permanently shut down. As of this date, the site and
+    all of its functionality are no longer accessible.
+  </p>
+  <p>
+    Unfortunately, data export is no longer possible. All user data is scheduled
+    for permanent deletion around the time of shutdown, in line with our
+    original plans and privacy commitments.
+  </p>
+</div>
+
+<h2 class="text-4xl text-center mb-3 !mt-5">General Information</h2>
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Archived Content</h3>
+  <p>
+    We teamed up with ArchiveTeam to preserve all publicly accessible
+    Retrospring content before the shutdown. With this static page now live,
+    most URLs to profiles, questions and answers will automatically redirect to
+    their archived versions on the Wayback Machine.
+  </p>
+  <p>
+    While not everything will work exactly as it did, this should keep a good
+    chunk of old links at least partially functional for the foreseeable future.
+  </p>
+</div>
+
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Social Media Accounts</h3>
+  <p>
+    Our social media accounts on X (formerly Twitter) <a
+      href="https://x.com/retrospring"
+      target="_blank"
+    >@retrospring</a>, Bluesky <a
+      href="https://bsky.app/profile/retrospring.net"
+      target="_blank"
+    >@retrospring.net</a>, and the Fediverse <a
+      href="https://floss.social/@retrospring"
+      target="_blank"
+    >@retrospring@floss.social</a> will remain online, but they won’t be
+    actively monitored.
+  </p>
+  <p>
+    We're keeping these accounts around mainly to prevent misuse of the
+    Retrospring name and to post updates if anything concerning comes up.
+  </p>
+</div>
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Source Code</h3>
+  <p>
+    Retrospring has been open source since 2015, and the code will remain
+    available for anyone interested.
+  </p>
+  <p>
+    However, with the shutdown on September 1st, 2025, active development and
+    support have officially ended. All repositories will be archived in a
+    read-only state.
+  </p>
+  <p>
+    <a
+      href="https://github.com/retrospring/retrospring"
+      target="_blank"
+      class="font-semibold"
+    >Retrospring on GitHub</a>
+  </p>
+  <p class="italic">
+    We encourage anyone who wants to continue the project to fork the code and
+    make it their own!
+  </p>
+</div>
+
+<h2 class="text-4xl text-center mb-0 mt-5">Statistics</h2>
+<p class="text-center italic mt-0 !mb-3">
+  Counts from 29th March 2017 to 28th February 2025
+</p>
+<div class="grid sm:grid-cols-6 gap-3 text-center mb-5">
+  <div class="sm:col-span-full bg-white rounded-md shadow-lg p-3">
+    <p class="font-bold text-2xl mb-0">
+      {{ totals.users_count |> formatNumber }}
+    </p>
+    <p class="!m-0">Users</p>
+  </div>
+  <div class="sm:col-span-3 bg-white rounded-md shadow-lg p-3">
+    <p class="font-bold text-2xl mb-0">
+      {{ totals.questions_count |> formatNumber }}
+    </p>
+    <p class="!m-0">Questions</p>
+  </div>
+  <div class="sm:col-span-3 bg-white rounded-md shadow-lg p-3">
+    <p class="font-bold text-2xl mb-0">
+      {{ totals.answers_count |> formatNumber }}
+    </p>
+    <p class="!m-0">Answers</p>
+  </div>
+  <div class="sm:col-span-3 bg-white rounded-md shadow-lg p-3">
+    <p class="font-bold text-2xl mb-0">
+      {{ totals.comments_count |> formatNumber }}
+    </p>
+    <p class="!m-0">Comments</p>
+  </div>
+  <div class="sm:col-span-3 bg-white rounded-md shadow-lg p-3">
+    <p class="font-bold text-2xl mb-0">
+      {{ totals.reactions_count |> formatNumber }}
+    </p>
+    <p class="!m-0">Smiles</p>
+  </div>
+</div>
+
+<h2 class="text-4xl text-center mt-5 mb-0">Graphed Timeline</h2>
+<p class="text-center italic mt-0 !mb-3">Above data as nice graphs!</p>
+<div class="bg-white rounded-md shadow-lg p-3 text-center !mb-5">
+  <h3 class="mb-0">Records per Day</h3>
+  <p class="text-sm !mb-3">
+    This graph shows how many of the above records were created each day.
+  </p>
+  <canvas
+    class="js-chart"
+    data-charts="{{ chart_data |> JSON.stringify |> encodeURI }}"
+  ></canvas>
+  <div class="text-left">
+    <p class="mb-0"><b>Events:</b></p>
+    <ul class="mb-0">
+      <li class="opacity-70">
+        <b>Before 2017:</b> The initial version of Retrospring runs from 2014 to
+        2016.
+      </li>
+      <li><b>29th March 2017:</b> Retrospring relaunched.</li>
+      <li>
+        <b>19th December 2021:</b> CuriousCat goes down for the first time.
+      </li>
+      <li>
+        <b>28th January 2023:</b> CuriousCat goes down for the second time.
+      </li>
+      <li>
+        <b>22nd October 2023:</b> CuriousCat goes down for the third time.
+      </li>
+      <li>
+        <b>18th June 2024:</b> Data anomaly? Not exactly sure what caused the
+        spike here.
+      </li>
+      <li><b>5th August 2024:</b> Retrospring shutdown announcement.</li>
+      <li><b>1st March 2025:</b> Retrospring goes into read-only mode.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="text-4xl text-center mt-0 mb-3">Thanks</h2>
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Contributors</h3>
+  <p>
+    Retrospring wouldn’t have been what it was without the many people who
+    helped shape it over the years. Whether you contributed code, submitted bug
+    reports, translated the interface, suggested features, or simply recommended
+    the site to a friend — thank you.
+  </p>
+  <p>
+    This was always a community-driven project, and every bit of feedback,
+    support, and enthusiasm meant the world to us. You helped make Retrospring
+    better, kinder, and more fun for everyone. 💙
+  </p>
+</div>
+
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Supporters</h3>
+  <p>
+    Thank you to everyone who supported Retrospring through Patreon, GitHub
+    Sponsors, and OpenCollective. With your help, we raised around $450 in
+    donations, which ended up mostly being unused.
+  </p>
+  <p>
+    These have been split equally and donated to three non-profit organizations
+    we care about: Queer Lexikon, the Electronic Frontier Foundation (EFF), and
+    Humedica — $150 each.
+  </p>
+  <p>Receipts below:</p>
+  <ul class="list-none m-0 p-0">
+    <li>
+      <a
+        href="/assets/img/donation-queer.png"
+        target="_blank"
+        class="font-semibold"
+      >Queer Lexikon</a>
+    </li>
+    <li>
+      <a
+        href="/assets/img/donation-eff.png"
+        target="_blank"
+        class="font-semibold"
+      >Electronic Frontier Foundation (EFF)</a>
+    </li>
+    <li>
+      <a
+        href="/assets/img/donation-humedica.png"
+        target="_blank"
+        class="font-semibold"
+      >Humedica</a>
+    </li>
+  </ul>
+</div>
+
+<div class="bg-white rounded-md shadow-lg p-3 text-center mb-3">
+  <h3 class="mb-0">Software</h3>
+  <p>
+    Over the years, Retrospring has been sponsored by a variety of software
+    solutions:
+  </p>
+  <div class="flex justify-center content-center gap-3 mt-3">
+    <a
+      href="https://getsentry.com"
+      target="_blank"
+      class="inline-block w-[50%]"
+    >
+      <img src="/assets/svg/3rd-party/sentry.svg" class="inline-block !m-0" />
+    </a>
+    <a
+      href="https://www.atlassian.com/software/statuspage"
+      target="_blank"
+      class="inline-block w-[50%]"
+    >
+      <img
+        src="/assets/svg/3rd-party/statuspage.svg"
+        class="inline-block !m-0"
+      />
+    </a>
+  </div>
+  <div class="flex justify-center content-center gap-3 mt-3">
+    <a
+      href="https://1password.com"
+      target="_blank"
+      class="inline-block w-[50%]"
+    >
+      <img
+        src="/assets/svg/3rd-party/1password.svg"
+        class="inline-block !m-0"
+      />
+    </a>
+    <a href="https://canny.io" target="_blank" class="inline-block w-[50%]">
+      <img
+        src="/assets/svg/3rd-party/canny.svg"
+        class="inline-block w-[50%] !m-0"
+      />
+    </a>
+  </div>
+</div>
+
+<div class="bg-white rounded-md shadow-lg p-3 text-center mt-10 mb-3">
+  <h3 class="mb-0">Well, that's all folks!</h3>
+  <p>
+    We hope you enjoyed using Retrospring as much as we enjoyed building it.
+    While it’s sad to say goodbye, we’re grateful for the time we had together.
+  </p>
+  <p>
+    Thank you for being part of the Retrospring community. We wish you all the
+    best in your future adventures online and beyond.
+  </p>
+</div>

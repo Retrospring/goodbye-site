@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="size-full" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <meta property="og:type" content="website">
+    {{ if title }}
+      <title>{{ title }} - Retrospring</title>
+      <meta property="og:title" content="{{ title }} - Retrospring">
+      <meta name="twitter:title" content="{{ title }} - Retrospring">
+    {{ else }}
+      <title>Retrospring</title>
+      <meta property="og:title" content="Retrospring">
+      <meta name="twitter:title" content="Retrospring">
+    {{ /if }}
+    {{ if description }}
+      <meta
+        name="description"
+        content='{{ description |> replace("\n", " ") |> trim }}'
+      >
+      <meta
+        property="og:description"
+        content='{{ description |> replace("\n", " ") |> trim }}'
+      >
+      <meta
+        name="twitter:description"
+        content='{{ description |> replace("\n", " ") |> trim }}'
+      >
+    {{ else }}
+      <meta
+        name="description"
+        content="A social Q/A website that ran from 2014 to 2025. Really, that's all!"
+      >
+      <meta
+        property="og:description"
+        content="A social Q/A website that ran from 2014 to 2025. Really, that's all!"
+      >
+      <meta
+        name="twitter:description"
+        content="A social Q/A website that ran from 2014 to 2025. Really, that's all!"
+      >
+    {{ /if }}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@retrospring">
+    <link rel="me" href="https://floss.social/@retrospring">
+    <meta property="fediverse:creator" content="@retrospring@floss.social">
+    <script type="module" src="/assets/js/script.js"></script>
+  </head>
+  <body class="bg-[#f0edf4]">
+    {{ content |> safe }}
+  </body>
+</html>
